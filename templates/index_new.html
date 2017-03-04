@@ -6,9 +6,9 @@
 <!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
     <head>
         <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="../files/resources/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="../files/resources/css/style1.css" class="css_style" />
-		<script type="text/javascript" src="../files/resources/js/modernizr.custom.86080.js"></script>
+        <link rel="stylesheet" type="text/css" href="files/resources/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="files/resources/css/style1.css" class="css_style" />
+		<script type="text/javascript" src="files/resources/js/modernizr.custom.86080.js"></script>
     </head>
 	
     <body>
@@ -149,33 +149,33 @@
         </div>
 	</div>
 	<!-- --------------------------------------------------------------------------------------------------------- -->
-	<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+	<script src="files/resources/js/jquery.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 	if (new Date().getMinutes() >= 15) {
 		$("#page").css("display","none");
 		$("#page2").css("display","block");
-		$(".css_style").attr("href","css/style2.css");
+		$(".css_style").attr("href","files/resources/css/style2.css");
 	} 
 	if (new Date().getMinutes() >= 30 ) {
 		$("#page").css("display","none");
 		$("#page2").css("display","none");
 		$("#page3").css("display","block");
-		$(".css_style").attr("href","css/style3.css");
+		$(".css_style").attr("href","files/resources/css/style3.css");
 	} 
 	if (new Date().getMinutes() >= 45 ) {
 		$("#page").css("display","none");
 		$("#page2").css("display","none");
 		$("#page3").css("display","none");
 		$("#page4").css("display","block");
-		$(".css_style").attr("href","css/style4.css");
+		$(".css_style").attr("href","files/resources/css/style4.css");
 	}
 	if (new Date().getMinutes() >= 60 ) {
 		$("#page").css("display","block");
 		$("#page2").css("display","none");
 		$("#page3").css("display","none");
 		$("#page4").css("display","none");
-		$(".css_style").attr("href","css/style1.css");
+		$(".css_style").attr("href","files/resources/css/style1.css");
 	}
 	setTimeout(function () {
     window.location.reload(1);

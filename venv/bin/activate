@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/lazarus/Programming/Flask_apps/guiyave_store_app/venv"
+VIRTUAL_ENV="/home/lazarus/Programming/Monitor_display_app/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
