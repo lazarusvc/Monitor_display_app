@@ -1,4 +1,4 @@
-#!venv/bin/python
+#!/usr/bin/env python
 import os
 import os.path as op
 from flask import Flask
