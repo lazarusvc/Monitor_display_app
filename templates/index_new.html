@@ -10,8 +10,8 @@
 	<div id="page">
         <ul class="cb-slideshow">
 
-            {%- for item in images %}
-                  {%- for txt in txt_file %}
+            {%- for item in images -%}
+                  {%- for txt in txt_file -%}
             <li><span><img src="{{ item }}"/></span><div><h3>{{ txt }}</h3></div></li>
                   {% endfor %}  
             {%- endfor %}
