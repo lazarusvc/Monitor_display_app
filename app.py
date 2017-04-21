@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import os.path as op
 from flask import Flask, render_template, request, redirect, url_for
@@ -30,6 +31,7 @@ def index():
     # image description
     # =======================================================
     txt_file = open("files/descriptions/description.txt").read().strip()
+    t = txt_file.split()
 
     # company description
     # ========================================================
@@ -40,7 +42,7 @@ def index():
     company_slogan_txt_file = open("files/descriptions/company_slogan.txt").read().strip()
 
     return render_template('index_new.html', images=images, 
-                                             txt_file=txt_file,
+                                             txt_file=t,
                                              company_txt_file=company_txt_file,
                                              company_slogan_txt_file=company_slogan_txt_file)
 
@@ -51,7 +53,7 @@ def index():
 def add():
     if request.method == 'POST':
         add = request.form['add']
-        txt_file = open("files/description.txt", "a")    
+        txt_file = open("files/descriptions/description.txt", "a")    
         txt_file.write(add + "\n")
         txt_file.close()
     return redirect(url_for('fileadmin.edit'))   
@@ -63,7 +65,7 @@ def add():
 def company():
     if request.method == 'POST':
         company = request.form['company']
-        txt_file = open("files/company.txt", "w")    
+        txt_file = open("files/descriptions/company.txt", "w")    
         txt_file.write(company + "\n")
         txt_file.close()
     return redirect(url_for('fileadmin.edit'))
@@ -75,7 +77,7 @@ def company():
 def company_slogan():
     if request.method == 'POST':
         company_slogan = request.form['company_slogan']
-        txt_file = open("files/company_slogan.txt", "w")    
+        txt_file = open("files/descriptions/company_slogan.txt", "w")    
         txt_file.write(company_slogan + "\n")
         txt_file.close()
     return redirect(url_for('fileadmin.edit'))            
