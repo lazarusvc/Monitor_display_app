@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import os
 import os.path as op
 from flask import Flask, render_template, request, redirect, url_for
