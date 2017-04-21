@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
-<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
-<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
-<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
     <head>
         <link rel="shortcut icon" href="../favicon.ico"> 
         <link rel="stylesheet" type="text/css" href="files/resources/css/demo.css" />
@@ -14,12 +9,13 @@
     <body>
 	<div id="page">
         <ul class="cb-slideshow">
-            <li><span><img src="files/1.jpg"/></span><div><h3>local·cuisine</h3></div></li>
-            <li><span><img src="files/2.jpg"/></span><div><h3>tasty·pastries</h3></div></li>
-            <li><span><img src="files/3.jpg"/></span><div><h3>delicious·meals</h3></div></li>
-            <li><span><img src="files/4.jpg"/></span><div><h3>humble·beginnings</h3></div></li>
-            <li><span><img src="files/5.jpg"/></span><div><h3>great·service</h3></div></li>
-            <li><span><img src="files/6.jpg"/></span><div><h3>freshly·dominican</h3></div></li>
+
+            {%- for item in images %}
+                  {%- for txt in txt_file %}
+            <li><span><img src="{{ item }}"/></span><div><h3>{{ txt }}</h3></div></li>
+                  {% endfor %}  
+            {%- endfor %}
+
         </ul>
         <div class="container">
             <!-- Codrops top bar -->
@@ -35,8 +31,15 @@
                 <div class="clr"></div>
             </div><!--/ Codrops top bar -->
             <header>
-                <h1>Welcome! <span>to Guiyave</span></h1>
-                <h2>Restaurant & Catering Service</h2>
+
+                {% if not company_txt_file, company_slogan_txt_file %}
+                    <h1>Welcome! <span>Please add your Company name</span></h1>
+                    <h2>and Company slogan</h2>
+                {% else %}
+                    <h1>Welcome! <span>{{ company_txt_file }}</span></h1>
+                    <h2>{{ company_slogan_txt_file }}</h2>
+                {% endif %}        
+                
 				<p class="codrops-demos">
 					<a href="#" class="current-demo"></a>
 					<a href=""></a>
@@ -46,7 +49,7 @@
             </header>
         </div>
 	</div>
-	<!-- --------------------------------------------------------------------------------------------------------- -->
+
 	<div id="page2" style="display:none;">
 	        <ul class="cb-slideshow">
             <li><span><img src="files/1.jpg"/></span><div><h3>local·cuisine</h3></div></li>
@@ -81,7 +84,7 @@
             </header>
         </div>
 	</div>
-	<!-- --------------------------------------------------------------------------------------------------------- -->	
+
 	<div id="page3" style="display:none;">
 		    <ul class="cb-slideshow">
             <li><span><img src="files/1.jpg"/></span><div><h3>local·cuisine</h3></div></li>
@@ -115,7 +118,7 @@
             </header>
         </div>
 	</div>
-	<!-- --------------------------------------------------------------------------------------------------------- -->	
+	
 	<div id="page4" style="display:none;">
         <ul class="cb-slideshow">
             <li><span><img src="files/1.jpg"/></span><div><h3>local·cuisine</h3></div></li>
@@ -148,7 +151,7 @@
             </header>
         </div>
 	</div>
-	<!-- --------------------------------------------------------------------------------------------------------- -->
+
 	<script src="files/resources/js/jquery.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {

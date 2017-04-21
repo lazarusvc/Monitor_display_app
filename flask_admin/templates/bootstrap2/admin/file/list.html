@@ -4,6 +4,49 @@
 
 {% block body %}
     {% block breadcrums %}
+    <style>
+        .add_desc {
+          display: block;
+        }
+        .add_desc input {
+          padding: 10px;
+          width: 90%;
+        }
+        .add_desc button {
+          padding: 6px;
+          display: inline-block;
+          position: absolute;
+          height: 41px;        
+        }
+
+        .company_desc {
+          display: block;
+        }
+        .company_desc input {
+          padding: 10px;
+          width: 90%;
+        }
+        .company_desc button {
+        padding: 6px;
+        display: inline-block;
+        position: absolute;
+        height: 41px;
+        }
+
+        .company_slogan_desc {
+          display: block;
+        }
+        .company_slogan_desc input {
+          padding: 10px;
+          width: 90%;
+        }
+        .company_slogan_desc button {
+        padding: 6px;
+        display: inline-block;
+        position: absolute;
+        height: 41px;
+        }
+    </style>
     <ul class="breadcrumb">
         <li>
             <a href="{{ get_dir_url('.index_view', path=None) }}">{{ _gettext('Root') }}</a>
@@ -165,10 +208,45 @@
         {% if actions %}
         <div class="btn-group">
             {{ actionslib.dropdown(actions, 'dropdown-toggle btn btn-large') }}
-        </div>
+        </div><hr/>
         {% endif %}
+
+        <!-- ========================================================================== 
+        ADD DESCRIPTION
+        ============================================================================ -->
+        <div class="add_desc">
+        <form action="{{ url_for('add') }}" method="POST">
+          <input type="text" name="add" placeholder="Add an image description ..." />
+          <button type="submit">SUBMIT</button>
+        </form>
+        </div>
+      </div>
+
+        <!-- ========================================================================== 
+        COMPANY DESCRIPTION
+        ============================================================================ -->
+        <div class="company_desc">
+        <form action="{{ url_for('company') }}" method="POST">
+          <input type="text" name="company" placeholder="Add your Company name ..." />
+          <button type="submit">SUBMIT</button>
+        </form>
+        </div>
+      </div>
+
+        <!-- ========================================================================== 
+        COMPANY SLOGAN DESCRIPTION
+        ============================================================================ -->
+        <div class="company_slogan_desc">
+        <form action="{{ url_for('company_slogan') }}" method="POST">
+          <input type="text" name="company_slogan" placeholder="Add your Company slogan ..." />
+          <button type="submit">SUBMIT</button>
+        </form>
+        </div>
+      </div>
     </div>
     {% endblock %}
+
+
 
     {% block actions %}
     {{ actionslib.form(actions, get_url('.action_view')) }}

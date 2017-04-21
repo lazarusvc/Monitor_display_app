@@ -1,6 +1,6 @@
 # Ignore virtual ENV
 ######################
-venv/
+/venv/
 .venv/
 
 # Ignore all .pyc
