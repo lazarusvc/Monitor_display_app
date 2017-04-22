@@ -36,12 +36,20 @@ def index():
     # company description
     # ========================================================
     company_txt_file = open("files/descriptions/company.txt").read().strip()
+    if company_txt_file == "":
+        company_txt_file = "Your company name"
+    else: 
+        company_txt_file
 
     # company slogan description
     # ========================================================
     company_slogan_txt_file = open("files/descriptions/company_slogan.txt").read().strip()
+    if company_slogan_txt_file == "":
+        company_slogan_txt_file = "Your company slogan"
+    else: 
+        company_slogan_txt_file
 
-    return render_template('index_new.html', images=images, 
+    return render_template('index.html', images=images, 
                                              txt_file=t,
                                              company_txt_file=company_txt_file,
                                              company_slogan_txt_file=company_slogan_txt_file)

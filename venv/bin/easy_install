@@ -1,4 +1,4 @@
-#!/var/www/Monitor_display_app/venv/bin/python2.7
+#!/home/lazarus/Programming/Monitor_display_app/venv/bin/python2.7
 
 # -*- coding: utf-8 -*-
 import re
